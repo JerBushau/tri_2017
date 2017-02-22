@@ -1,6 +1,6 @@
 Code Louisville Final Project
 =============================
-A website for a local HVAC & refrigeration company.
+A website for a local refrigeration & HVAC company.
 
 To view the site simply:
 + `git clone repo`
