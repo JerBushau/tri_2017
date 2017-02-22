@@ -1,0 +1,12 @@
+{
+  "name": "tri_2017",
+  "version": "1.0.0",
+  "description": "Website for Thomas Refrigeration Inc.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test YET specified\" && exit 1",
+    "watch-sass": "sass --cache-location style/sass/.sass_cache --watch style/sass:style/css",
+    "build": ". ./build.sh"  
+  },
+  "author": "Jeremiah Bushau"
+}

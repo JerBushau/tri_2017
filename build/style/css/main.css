@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald");
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px; }
+
+ul {
+  padding: 0px;
+  list-style: none; }
+
+h1,
+h2,
+h3,
+a {
+  margin: auto;
+  text-align: center;
+  font-family: 'Oswald', sans-serif; }
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #000;
+  width: 40%; }
+
+p {
+  margin: 0.5em 0; }
+
+img {
+  margin: auto;
+  display: flex; }
+
+.wrapper {
+  background-image: radial-gradient(circle, transparent, #fff 95%), url(../../images/water_ice_bg_cpsd.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  padding: 0px; }
+
+header {
+  align-items: center;
+  margin: auto;
+  max-width: 700px; }
+  header img[class="logo"] {
+    width: 95%;
+    margin: auto; }
+  header img[class="number"] {
+    width: 60%;
+    margin: auto; }
+
+nav {
+  margin: 1em auto; }
+  nav a {
+    color: #1521c5;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+    transition: all .5s ease; }
+    nav a:hover, nav a:active {
+      color: #E30D0B;
+      text-shadow: 4px 4px rgba(0, 0, 0, 0.3); }
+    @media (min-width: 350px) {
+      nav a {
+        font-size: 1.6em; } }
+
+section.service,
+section.install,
+section.contact {
+  display: none;
+  text-align: center;
+  background: rgba(242, 242, 242, 0.9);
+  border: 10px solid black;
+  position: absolute;
+  padding: 1.5em 0.7em 0.7em;
+  height: auto;
+  max-width: 790px;
+  min-height: 100%;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  align-items: center;
+  right: 0px;
+  left: 0px;
+  font-size: .82em;
+  font-family: 'Open Sans', sans-serif; }
+  section.service > div:first-child,
+  section.install > div:first-child,
+  section.contact > div:first-child {
+    margin-top: 1em; }
+  section.service .exit,
+  section.install .exit,
+  section.contact .exit {
+    cursor: pointer;
+    position: absolute;
+    padding: 2px 8px;
+    top: 0.3em;
+    right: 0.3em;
+    transition: all 0.4s ease;
+    font-size: 1.8em; }
+    section.service .exit:before,
+    section.install .exit:before,
+    section.contact .exit:before {
+      font-family: FontAwesome;
+      content: "\f00d"; }
+    section.service .exit:hover,
+    section.install .exit:hover,
+    section.contact .exit:hover {
+      transform: rotate(180deg);
+      color: red; }
+  @media (min-width: 415px) {
+    section.service,
+    section.install,
+    section.contact {
+      font-size: 1.18em; } }
+
+.service h1 {
+  display: inline; }
+.service h3 {
+  margin: 0.4em 0 0.7em; }
+.service img[class="ice-mach"] {
+  width: 60%; }
+
+.install .customers > h3 {
+  margin: 0.7em 0; }
+.install .customers > div.row > div h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal; }
+
+.contact h1:first-child {
+  display: inline-block;
+  margin-bottom: 1em; }
+.contact h3 {
+  margin-bottom: 0.5em; }
+.contact .contact-icons {
+  text-align: right; }
+  .contact .contact-icons p {
+    font-size: 1.17em;
+    margin: 0; }
+  .contact .contact-icons i[class^="fa"] {
+    margin: 0.45em; }
+.contact .contact-labels h3 {
+  text-align: right; }
+.contact .contact-values h3 {
+  text-align: left; }
+
+.red {
+  color: red; }
+
+.blue {
+  color: #1521c5; }
+
+.m-a {
+  margin: auto; }
+
+.m-0 {
+  margin: 0px; }
+
+.mb-0 {
+  margin-bottom: 0.1em; }
+
+.larger {
+  font-size: 2em; }
+
+.bb {
+  border-bottom: 2px solid #000; }
+
+@media (max-width: 400px) {
+  .hidden-xs {
+    display: none; } }
+
+/*# sourceMappingURL=main.css.map */
