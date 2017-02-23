@@ -148,6 +148,10 @@ section.contact {
   @media (min-width: 415px) {
     font-size: 1.18em;
   }
+
+  @media (max-height: 560px) {
+    bottom: auto;
+  }
 }
 
 .service {

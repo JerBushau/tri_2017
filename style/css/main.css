@@ -122,6 +122,11 @@ section.contact {
     section.install,
     section.contact {
       font-size: 1.18em; } }
+  @media (max-height: 560px) {
+    section.service,
+    section.install,
+    section.contact {
+      bottom: auto; } }
 
 .service h1 {
   display: inline; }
