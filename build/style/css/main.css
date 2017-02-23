@@ -101,7 +101,6 @@ section.contact {
   section.contact .exit {
     cursor: pointer;
     position: absolute;
-    padding: 2px 8px;
     top: 0.3em;
     right: 0.3em;
     transition: all 0.4s ease;
@@ -109,12 +108,14 @@ section.contact {
     section.service .exit:before,
     section.install .exit:before,
     section.contact .exit:before {
+      display: flex;
       font-family: FontAwesome;
-      content: "\f00d"; }
+      content: "\f00d";
+      padding: 2px 8px; }
     section.service .exit:hover,
     section.install .exit:hover,
     section.contact .exit:hover {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
       color: red; }
   @media (min-width: 415px) {
     section.service,
@@ -125,9 +126,8 @@ section.contact {
 .service h1 {
   display: inline; }
 .service h3 {
-  margin: 0.4em 0 0.7em; }
-.service img[class="ice-mach"] {
-  width: 60%; }
+  margin: 0.4em 0 0.7em;
+  background: #e6e6e6; }
 
 .install .customers > h3 {
   margin: 0.7em 0; }
