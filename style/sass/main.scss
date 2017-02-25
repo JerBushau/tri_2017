@@ -99,6 +99,16 @@ nav {
   }
 }
 
+footer {  
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  align-self: center;
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+// sections
 section.service,
 section.install,
 section.contact {
@@ -119,6 +129,7 @@ section.contact {
   left: 0px;
   font-size: .82em;
   font-family: 'Open Sans', sans-serif;
+  z-index: 1;
 
   & > div:first-child {
     margin-top: 1em;

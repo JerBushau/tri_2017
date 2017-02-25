@@ -72,6 +72,14 @@ nav {
       nav a {
         font-size: 1.6em; } }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  align-self: center;
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(0, 0, 0, 0.6); }
+
 section.service,
 section.install,
 section.contact {
@@ -91,7 +99,8 @@ section.contact {
   right: 0px;
   left: 0px;
   font-size: .82em;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif;
+  z-index: 1; }
   section.service > div:first-child,
   section.install > div:first-child,
   section.contact > div:first-child {
