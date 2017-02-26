@@ -281,20 +281,14 @@ section.contact {
 // css animations
 
 @keyframes hvr-wobble-horizontal {
-  16.65% {
-    transform: translateX(2px);
-  }
   33.3% {
-    transform: translateX(-4px);
+    transform: translateX(-3px);
   }
   49.95% {
-    transform: translateX(2px);
-  }
-  66.6% {
-    transform: translateX(-1px);
+    transform: translateX(3px);
   }
   83.25% {
-    transform: translateX(1px);
+    transform: translateX(-2px);
   }
   100% {
     transform: translateX(0);
@@ -308,7 +302,7 @@ section.contact {
 }
 .hvr-wobble-horizontal:hover, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {
   animation-name: hvr-wobble-horizontal;
-  animation-duration: 0.7s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
