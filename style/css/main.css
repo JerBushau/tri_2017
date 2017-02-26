@@ -86,7 +86,7 @@ section.contact {
   display: none;
   text-align: center;
   background: rgba(242, 242, 242, 0.9);
-  border: 10px solid black;
+  border: 8px solid black;
   position: absolute;
   padding: 1.5em 0.7em 0.7em;
   height: auto;
@@ -130,7 +130,8 @@ section.contact {
     section.service,
     section.install,
     section.contact {
-      font-size: 1.18em; } }
+      font-size: 1.18em;
+      border: 10px solid black; } }
   @media (max-height: 560px) {
     section.service,
     section.install,
