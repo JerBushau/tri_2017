@@ -11,6 +11,8 @@ build() {
   cp -avr style/fonts/ build/style/fonts/
   cp -av style/css/main.css build/style/css/main.css 
   cp -av index.html build/index.html
+
+  node_modules/.bin/postcss -u autoprefixer -r build/style/css/main.css
 }
 
 if [ -e build/ ] 
