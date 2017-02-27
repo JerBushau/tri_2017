@@ -15,15 +15,15 @@ function linkHandler(e) {
   if (linkText === 'Service') {
     
     // css & hide used to fadeIn flex instead of block
-    $serviceOverlay.css("display", "flex").hide().fadeIn(1000);
+    $serviceOverlay.css("display", "flex").hide().fadeIn();
 
   } else if (linkText === 'Installation') {
 
-    $installOverlay.css("display", "flex").hide().fadeIn(1000);
+    $installOverlay.css("display", "flex").hide().fadeIn();
 
   } else if (linkText === 'Contact') {
 
-    $contactOverlay.css("display", "flex").hide().fadeIn(1000);
+    $contactOverlay.css("display", "flex").hide().fadeIn();
   }
 }
 
