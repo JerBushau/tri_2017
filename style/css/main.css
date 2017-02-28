@@ -20,11 +20,6 @@ a {
   text-align: center;
   font-family: 'Oswald', sans-serif; }
 
-hr {
-  border: 0;
-  border-bottom: 1px solid #191919;
-  width: 40%; }
-
 p {
   margin: 0.5em 0; }
 
@@ -91,7 +86,7 @@ section.contact {
   display: none;
   color: #191919;
   text-align: center;
-  background: #191919;
+  background: #F7F7F7;
   background: rgba(247, 247, 247, 0.922);
   border: 8px solid #191919;
   position: absolute;

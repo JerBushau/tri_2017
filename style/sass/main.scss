@@ -1,16 +1,19 @@
 //variables
 $black: #191919;
+$white: #F7F7F7;
 $tri_blue: #1521c5;
 $tri_red: #E00909;
 
-$bg-fallback-color: #F7F7F7;
-$bg-image: radial-gradient(circle, transparent, darken(rgba(255, 255, 255, 0.9), 3%) 95%),
+$bg-fallback-color: $white;
+$bg-sections: darken(rgba(255, 255, 255, 0.922), 3%);
+$bg-gradient-white: darken(rgba(255, 255, 255, 0.9), 3%);
+$bg-image: radial-gradient(circle, transparent, $bg-gradient-white 95%),
            url(../../images/water_ice_bg_cpsd.jpg);
 
 //fonts 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
 
-// General styles
+// Base styles
 * {
   box-sizing: border-box;
 }
@@ -34,12 +37,6 @@ a {
   margin: auto;
   text-align: center;
   font-family: 'Oswald', sans-serif;
-}
-
-hr {
-  border: 0;
-  border-bottom: 1px solid $black;
-  width: 40%;
 }
 
 p {
@@ -128,8 +125,8 @@ section.contact {
   display: none;
   color: $black;
   text-align: center;
-  background: $black;
-  background: darken(rgba(255, 255, 255, 0.922), 3%);
+  background: $bg-fallback-color;
+  background: $bg-sections;
   border: 8px solid $black;
   position: absolute;
   padding: 1.5em 0.7em 0.7em;
