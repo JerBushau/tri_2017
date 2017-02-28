@@ -1,8 +1,9 @@
 //variables
 $black: #191919;
 $white: #F7F7F7;
-$tri_blue: #1521c5;
-$tri_red: #E00909;
+$tri-blue: #1521c5;
+$tri-red: #E00909;
+$footer-font: rgba(25,25,25, 0.6);
 
 $bg-fallback-color: $white;
 $bg-sections: darken(rgba(255, 255, 255, 0.922), 3%);
@@ -89,7 +90,7 @@ nav {
   width: 100%;
 
   a {
-    color: $tri_blue;
+    color: $tri-blue;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
@@ -98,7 +99,7 @@ nav {
 
     &:hover,
     &:active {
-      color: $tri_red;
+      color: $tri-red;
     }
 
     @media (min-width: 361px) {
@@ -115,7 +116,7 @@ footer {
   align-self: center;
   font-family: 'Open Sans', sans-serif;
   color: $black;
-  color: rgba(25,25,25, 0.6);
+  color: $footer-font;
 }
 
 // sections
@@ -152,19 +153,19 @@ section.contact {
     position: absolute;
     top: 0.3em;
     right: 0.3em;
-    transition: all 0.4s ease;
-    font-size: 1.8em;
 
     &:before {
       display: flex;
       font-family: FontAwesome;
+      font-size: 1.8em;
       content: "\f00d"; 
       padding: 2px 8px;
+      transition: all 0.4s ease;
     }
 
-    &:hover {
+    &:hover:before {
       transform: rotate(90deg);
-      color: $tri_red;
+      color: $tri-red;
     }
   }
 
@@ -248,11 +249,11 @@ section.contact {
 //typo and stuff
 
 .red {
-  color: $tri_red;
+  color: $tri-red;
 }
 
 .blue {
-  color: $tri_blue;
+  color: $tri-blue;
 }
 
 .m-a {

@@ -113,19 +113,19 @@ section.contact {
     cursor: pointer;
     position: absolute;
     top: 0.3em;
-    right: 0.3em;
-    transition: all 0.4s ease;
-    font-size: 1.8em; }
+    right: 0.3em; }
     section.service .exit:before,
     section.install .exit:before,
     section.contact .exit:before {
       display: flex;
       font-family: FontAwesome;
+      font-size: 1.8em;
       content: "\f00d";
-      padding: 2px 8px; }
-    section.service .exit:hover,
-    section.install .exit:hover,
-    section.contact .exit:hover {
+      padding: 2px 8px;
+      transition: all 0.4s ease; }
+    section.service .exit:hover:before,
+    section.install .exit:hover:before,
+    section.contact .exit:hover:before {
       transform: rotate(90deg);
       color: #E00909; }
   @media (min-width: 500px) {
