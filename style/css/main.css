@@ -6,7 +6,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  letter-spacing: 0.039em; }
 
 ul {
   padding: 0;
@@ -29,7 +30,7 @@ img {
 
 .wrapper {
   background: #F7F7F7;
-  background-image: radial-gradient(circle, transparent, rgba(247, 247, 247, 0.9) 95%), url(../../images/water_ice_bg_cpsd.jpg);
+  background-image: radial-gradient(circle, transparent, rgba(247, 247, 247, 0.9) 98%), url(../../images/water_ice_bg_cpsd.jpg);
   background-attachment: fixed;
   background-size: cover;
   display: flex;
@@ -53,24 +54,24 @@ header {
     width: 60%;
     margin: auto; }
 
-nav {
+.main-nav {
   display: flex;
   margin: 1em auto;
   width: 100%; }
-  nav a {
+  .main-nav a {
     color: #1521c5;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
     transition: all .5s ease; }
-    nav a:hover, nav a:active {
+    .main-nav a:hover, .main-nav a:active {
       color: #E00909; }
     @media (min-width: 361px) {
-      nav a {
+      .main-nav a {
         font-size: 1.6em; } }
   @media (min-width: 500px) {
-    nav {
+    .main-nav {
       width: 70%; } }
 
 footer {
@@ -81,18 +82,18 @@ footer {
   color: rgba(25, 25, 25, 0.6); }
 
 section.service,
-section.install,
+section.installation,
 section.contact {
   display: none;
   color: #191919;
   text-align: center;
   background: #F7F7F7;
-  background: rgba(247, 247, 247, 0.922);
-  border: 8px solid #191919;
+  background: rgba(237, 237, 237, 0.922);
+  border: 10px solid #191919;
   position: absolute;
   padding: 1.5em 0.7em 0.7em;
   height: auto;
-  max-width: 790px;
+  max-width: 800px;
   min-height: 100%;
   margin: auto;
   top: 0;
@@ -104,39 +105,61 @@ section.contact {
   font-family: 'Open Sans', sans-serif;
   z-index: 1; }
   section.service > div:first-child,
-  section.install > div:first-child,
+  section.installation > div:first-child,
   section.contact > div:first-child {
     margin-top: 1em; }
-  section.service .exit,
-  section.install .exit,
-  section.contact .exit {
-    cursor: pointer;
+  section.service .sub-nav,
+  section.installation .sub-nav,
+  section.contact .sub-nav {
+    font-family: 'Oswald', sans-serif;
+    color: #1521c5;
     position: absolute;
+    font-size: 1.2em;
     top: 0.3em;
-    right: 0.3em; }
-    section.service .exit:before,
-    section.install .exit:before,
-    section.contact .exit:before {
-      display: flex;
-      font-family: FontAwesome;
-      font-size: 1.8em;
-      content: "\f00d";
-      padding: 2px 8px;
-      transition: all 0.4s ease; }
-    section.service .exit:hover:before,
-    section.install .exit:hover:before,
-    section.contact .exit:hover:before {
-      transform: rotate(90deg);
+    left: 0.3em;
+    padding: 0;
+    margin: 0; }
+    section.service .sub-nav a,
+    section.installation .sub-nav a,
+    section.contact .sub-nav a {
+      margin: 0.6em;
+      transition: all 0.5s ease;
+      text-decoration: none;
+      font-weight: bold; }
+    section.service .sub-nav a:hover,
+    section.service .sub-nav .active,
+    section.installation .sub-nav a:hover,
+    section.installation .sub-nav .active,
+    section.contact .sub-nav a:hover,
+    section.contact .sub-nav .active {
       color: #E00909; }
+  section.service .exit:before,
+  section.installation .exit:before,
+  section.contact .exit:before {
+    display: flex;
+    position: absolute;
+    font-size: 1.6em;
+    top: 0.3em;
+    right: 0.3em;
+    font-family: FontAwesome;
+    cursor: pointer;
+    content: "\f00d";
+    padding: 2px 8px;
+    transition: all 0.5s ease; }
+  section.service .exit:hover:before,
+  section.installation .exit:hover:before,
+  section.contact .exit:hover:before {
+    transform: rotate(90deg);
+    color: #E00909; }
   @media (min-width: 500px) {
     section.service,
-    section.install,
+    section.installation,
     section.contact {
       font-size: 1.18em;
-      border: 10px solid #191919; } }
+      border: 13px solid #191919; } }
   @media (max-height: 560px) {
     section.service,
-    section.install,
+    section.installation,
     section.contact {
       bottom: auto; } }
 
@@ -146,10 +169,10 @@ section.contact {
   margin: 0.4em 0 0.7em;
   background: #e6e6e6; }
 
-.install .customers > h3 {
+.installation .customers > h3 {
   margin: 0.7em 0; }
-.install .customers .col-xs-6 h3,
-.install .customers .col-sm-4 h3 {
+.installation .customers .col-xs-6 h3,
+.installation .customers .col-sm-4 h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal; }
 
