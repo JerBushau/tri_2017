@@ -1,47 +1,73 @@
 'use strict'
 
-$('nav a').on('click', navHandler);
-$('.sub-nav a').on('click', function (e) {
-  var currentSection = e.target.parentElement.parentElement;
-  if (e.target.className === 'active') {
-    return 
-  }
-  
-  $(currentSection).fadeOut(700);
-})
+var navLinks = document.querySelectorAll('nav a');
+var subNavLinks = document.querySelectorAll('.sub-nav a');
+var exits = document.querySelectorAll('.exit');
+var fadeDur = 700;
 
-$('.exit').on('click', exitHandler);
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener('click', navHandler);
+}
+
+for (let i = 0; i < subNavLinks.length; i++){
+  subNavLinks[i].addEventListener('click', subNavHandler);
+}
+
+for (let i = 0; i < exits.length; i++) {
+  exits[i].addEventListener('click', exitHandler);
+}
 
 function navHandler(e) {
   var linkText = e.target.textContent;
-  var $serviceOverlay = $('section.service');
-  var $installOverlay = $('section.installation');
-  var $contactOverlay = $('section.contact');
+  var serviceOverlay = document.querySelector('section.service');
+  var installOverlay = document.querySelector('section.installation');
+  var contactOverlay = document.querySelector('section.contact');
 
   e.preventDefault();
   
-  if (e.target.className === 'active') {
+  if (e.target.className === 'active bb') {
     return 
   }
 
   if (linkText === 'Service') {
     
-    // css & hide used to fadeIn flex instead of block
-    $serviceOverlay.css("display", "flex").hide().fadeIn(700);
+    Velocity(serviceOverlay, 'fadeIn', {
+      duration: fadeDur,
+      display: 'flex'
+    });
 
   } else if (linkText === 'Installation') {
 
-    $installOverlay.css("display", "flex").hide().fadeIn(700);
+    Velocity(installOverlay, 'fadeIn', {
+      duration: fadeDur,
+      display: 'flex'
+    });;
 
   } else if (linkText === 'Contact') {
 
-    $contactOverlay.css("display", "flex").hide().fadeIn(700);
+    Velocity(contactOverlay, 'fadeIn', {
+      duration: fadeDur,
+      display: 'flex'
+    });
   }
 }
 
-function exitHandler(e) {
-  var target = e.target;
-  var currentSection = target.parentElement;
+function subNavHandler(e) {
+  var currentSection = e.target.parentElement.parentElement;
 
-  $(currentSection).fadeOut();
+  if (e.target.className === 'active bb') {
+    return 
+  }
+
+  Velocity(currentSection, 'fadeOut', {
+    duration: fadeDur
+  });
+}
+
+function exitHandler(e) {
+  var currentSection = e.target.parentElement;
+
+  Velocity(currentSection, 'fadeOut', {
+    duration: fadeDur
+  });
 }
