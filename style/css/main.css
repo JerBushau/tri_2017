@@ -21,6 +21,15 @@ a {
   text-align: center;
   font-family: 'Oswald', sans-serif; }
 
+h1 {
+  font-size: 1.55em; }
+
+h2 {
+  font-size: 1.35em; }
+
+h3 {
+  font-size: 1.25em; }
+
 p {
   margin: 0.5em 0; }
 
@@ -34,10 +43,7 @@ img {
   background-attachment: fixed;
   background-size: cover;
   display: flex;
-  height: 100%;
-  width: 100%;
   flex-direction: column;
-  justify-content: center;
   align-content: center;
   margin: auto;
   padding: 0; }
@@ -46,26 +52,34 @@ header {
   align-items: center;
   justify-content: center;
   margin: auto;
-  max-width: 700px; }
-  header img[class="logo"] {
+  max-width: 100%; }
+  header .logo {
     width: 95%;
-    margin: auto; }
-  header img[class="number"] {
+    margin: auto;
+    margin-top: 1.5em; }
+  header .number {
     width: 60%;
     margin: auto; }
+
+.sticky-wrapper {
+  width: 100%; }
 
 .main-nav {
   display: flex;
   margin: 1em auto;
-  width: 100%; }
+  transition: all .5s ease; }
+  .is-sticky .main-nav {
+    background: #F7F7F7;
+    padding: 1em auto;
+    box-shadow: 0 0 10px rgba(25, 25, 25, 0.6);
+    border-radius: 5px; }
   .main-nav a {
     color: #1521c5;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2em;
-    transition: all .5s ease; }
-    .main-nav a:hover, .main-nav a:active {
+    font-size: 1.2em; }
+    .main-nav a:active {
       color: #E00909; }
     @media (min-width: 361px) {
       .main-nav a {
@@ -76,128 +90,61 @@ header {
 
 footer {
   z-index: 0;
+  display: flex;
   align-self: center;
   font-family: 'Open Sans', sans-serif;
+  height: 150px;
   color: #191919;
   color: rgba(25, 25, 25, 0.6); }
+  footer small {
+    align-self: flex-end; }
 
 section.service,
 section.installation,
 section.contact {
-  display: none;
+  display: flex;
   color: #191919;
   text-align: center;
   background: #F7F7F7;
-  background: radial-gradient(circle, rgba(192, 192, 192, 0.922), rgba(245, 245, 245, 0.922));
-  border: 10px solid #191919;
-  position: absolute;
+  background: radial-gradient(circle, rgba(192, 192, 192, 0.822), rgba(245, 245, 245, 0.822));
+  border: 1px solid #F7F7F7;
+  border-radius: .8em;
   padding: 2em 0.7em 1.7em;
   height: auto;
-  max-width: 800px;
-  min-height: 100%;
-  margin: auto;
-  top: 0;
-  bottom: auto;
+  max-width: 850px;
+  margin: 2em auto;
   align-items: center;
-  right: 0;
-  left: 0;
-  font-size: .82em;
+  font-size: .89em;
   font-family: 'Open Sans', sans-serif;
   z-index: 1; }
-  section.service > div:first-child,
-  section.installation > div:first-child,
-  section.contact > div:first-child {
-    margin-top: 1em; }
-  section.service .sub-nav,
-  section.installation .sub-nav,
-  section.contact .sub-nav {
-    font-family: 'Oswald', sans-serif;
-    color: #1521c5;
-    position: absolute;
-    font-size: 1.2em;
-    top: 0.3em;
-    left: 0.3em;
-    padding: 0;
-    margin: 0; }
-    section.service .sub-nav a,
-    section.installation .sub-nav a,
-    section.contact .sub-nav a {
-      color: #1521c5;
-      margin: 0.6em;
-      transition: all 0.5s ease;
-      text-decoration: none;
-      font-weight: bold; }
-    section.service .sub-nav a:hover,
-    section.service .sub-nav .active,
-    section.installation .sub-nav a:hover,
-    section.installation .sub-nav .active,
-    section.contact .sub-nav a:hover,
-    section.contact .sub-nav .active {
-      color: #E00909; }
-  section.service .exit:before,
-  section.installation .exit:before,
-  section.contact .exit:before {
-    display: flex;
-    position: absolute;
-    font-size: 1.6em;
-    top: 0.3em;
-    right: 0.3em;
-    font-family: FontAwesome;
-    cursor: pointer;
-    content: "\f00d";
-    padding: 2px 8px;
-    transition: all 0.5s ease; }
-  section.service .exit:hover:before,
-  section.installation .exit:hover:before,
-  section.contact .exit:hover:before {
-    color: #E00909; }
   @media (min-width: 500px) {
     section.service,
     section.installation,
     section.contact {
-      font-size: 1.16em;
-      border: 13px solid #191919; } }
-  @media (max-height: 500px) {
-    section.service,
-    section.installation,
-    section.contact {
-      bottom: auto; } }
+      font-size: 1.16em; } }
 
-.service h1 {
-  display: inline; }
-.service h3 {
-  margin: 0.4em 0 0.7em;
-  background: rgba(245, 245, 245, 0.4); }
-
-.installation .customers > h3 {
-  margin: 0; }
-.installation .customers .col-xs-6 h3,
-.installation .customers .col-sm-4 h3 {
+.installation .col-xs-6 h3,
+.installation .col-sm-4 h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal; }
-
-.contact h1:first-child {
-  display: inline-block;
-  margin-bottom: 1em; }
-.contact h3 {
-  margin-bottom: 0.5em; }
-.contact .contact-icons {
-  text-align: right; }
-  .contact .contact-icons p {
-    font-size: 1.17em;
-    margin: 0; }
-  .contact .contact-icons i[class^="fa"] {
-    margin: 0.45em; }
-.contact .contact-labels h3 {
-  text-align: right; }
-.contact .contact-values h3 {
-  text-align: left; }
 
 .red {
   color: #E00909; }
 
 .blue {
   color: #1521c5; }
+
+.bg-highlight {
+  background: rgba(245, 245, 245, 0.4); }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.inline {
+  display: inline; }
 
 .m-a {
   margin: auto; }
@@ -223,5 +170,28 @@ section.contact {
 @media (max-width: 400px) {
   .hidden-xs {
     display: none; } }
+
+@keyframes hvr-wobble {
+  33.3% {
+    transform: translateY(3px); }
+  49.95% {
+    transform: translateY(-3px); }
+  83.25% {
+    transform: translateY(2px); }
+  100% {
+    transform: translateY(0); } }
+.hvr-wobble {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent; }
+
+.hvr-wobble:hover,
+.hvr-wobble:focus,
+.hvr-wobble:active {
+  animation-name: hvr-wobble;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1; }
 
 /*# sourceMappingURL=main.css.map */

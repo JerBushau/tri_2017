@@ -1,73 +1,14 @@
 'use strict'
 
-var navLinks = document.querySelectorAll('nav a');
-var subNavLinks = document.querySelectorAll('.sub-nav a');
-var exits = document.querySelectorAll('.exit');
-var fadeDur = 700;
+// Sticky nav
+$('.main-nav').sticky({topSpacing: 0});
 
-for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener('click', navHandler);
-}
+// Smooth scroll to anchors
+$('.scroll').on('click', function(evt) {     
+  evt.preventDefault();
+  $('html,body').animate({scrollTop:$(this.hash).offset().top - 54}, 400);
 
-for (let i = 0; i < subNavLinks.length; i++){
-  subNavLinks[i].addEventListener('click', subNavHandler);
-}
 
-for (let i = 0; i < exits.length; i++) {
-  exits[i].addEventListener('click', exitHandler);
-}
+  $(evt.target).blur()
 
-function navHandler(e) {
-  var linkText = e.target.textContent;
-  var serviceOverlay = document.querySelector('section.service');
-  var installOverlay = document.querySelector('section.installation');
-  var contactOverlay = document.querySelector('section.contact');
-
-  e.preventDefault();
-  
-  if (e.target.className === 'active bb') {
-    return 
-  }
-
-  if (linkText === 'Service') {
-    
-    Velocity(serviceOverlay, 'fadeIn', {
-      duration: fadeDur,
-      display: 'flex'
-    });
-
-  } else if (linkText === 'Installation') {
-
-    Velocity(installOverlay, 'fadeIn', {
-      duration: fadeDur,
-      display: 'flex'
-    });;
-
-  } else if (linkText === 'Contact') {
-
-    Velocity(contactOverlay, 'fadeIn', {
-      duration: fadeDur,
-      display: 'flex'
-    });
-  }
-}
-
-function subNavHandler(e) {
-  var currentSection = e.target.parentElement.parentElement;
-
-  if (e.target.className === 'active bb') {
-    return 
-  }
-
-  Velocity(currentSection, 'fadeOut', {
-    duration: fadeDur
-  });
-}
-
-function exitHandler(e) {
-  var currentSection = e.target.parentElement;
-
-  Velocity(currentSection, 'fadeOut', {
-    duration: fadeDur
-  });
-}
+});
