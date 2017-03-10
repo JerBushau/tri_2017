@@ -24,16 +24,16 @@
         <img class="number" src="images/thomasNumber.png">
 
         <nav class="main-nav">
-          <a href="#service" class="scroll col-xs-4 hvr-wobble">Service</a>
-          <a href="#install" class="scroll col-xs-4 hvr-wobble">Installation</a>
-          <a href="#contact" class="scroll col-xs-4 hvr-wobble">Contact</a>
+          <a href="#service" class="col-xs-4 col-sm-2 hvr-wobble">Service</a>
+          <a href="#install" class="col-xs-4 col-sm-2 hvr-wobble">Installation</a>
+          <a href="#contact" class="col-xs-4 col-sm-2 hvr-wobble">Contact</a>
         </nav>
 
       </header>
 
       <article>
-
-        <section id="service" class="row service">
+      <a id="service" class="offset"></a>
+        <section class="row service">
 
           <div class="col-xs-12">
             <h1>We're on call <span class="red">24</span> hours a day <span class="red">7</span> days a week.</h1>
@@ -89,7 +89,9 @@
 
         </section> <!-- end service section -->
 
-        <section id="install" class="row installation">
+        <a id="install" class="offset"></a>
+
+        <section class="row installation">
 
           <div class="col-xs-12">
             <h1>We have <span class="red">30 years</span> experience in the commercial refrigeration industry.</h1>
@@ -147,8 +149,10 @@
 
         </section> <!-- end install section -->
 
+        <a id="contact" class="offset"></a>
+
         <!-- contact section meeds re-build -->
-        <section id="contact" class="row contact">
+        <section class="row contact">
 
           <div class="col-xs-12">
             <h1 class="bb larger inline">Contact Us:</h1>
@@ -173,10 +177,15 @@
                 <h3 class="text-left"> <span class="red">812-288-8144</span></h3>
                 <h3 class="text-left">812-288-6762</h3>
                 <h3 class="text-left">info@thomasinc.com</h3>
-                <h3 class="text-left">401 E. Charlestown Ave.<br>Jeffersonville, IN 47130</h3>
+                <h3 class="text-left">401 E. Charlestown Ave.<br class="hidden-xs"> Jeffersonville, IN 47130</h3>
               </div>
             </div>
 
+          </div>
+
+          <h3 class="mt-3 mb-0">We service all of the<br> <span class="red">Louisville</span> and <span class="red">Southern Indiana</span> area.</h3>
+
+          <div id="map">
           </div>
 
         </section> <!-- end contact section -->
@@ -187,14 +196,16 @@
         <small>Jerbuilt &copy; 2017</small>
       </footer>
 
-      <button class="b2t">
-        <i class="fa fa-arrow-circle-o-up fa-3x" aria-hidden="true"></i><br><small>back to top</small>
-      </button>
+      <a class="b2t" href="#">
+        <i class="fa fa-arrow-circle-o-up fa-3x" aria-hidden="true"></i>
+        <small>back to top</small>
+      </a>
 
     </div>
     <!-- scripts -->
     <script src="scripts/vendor/jquery.min.js" type="text/javascript"></script>
-    <script src="scripts/vendor/jquery.sticky.js" type="text/javascript"></script>
     <script src="scripts/thomas.js" type="text/javascript"></script>
+    <script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8YTFM9qVwI7531rHn5K0OnZtx2cEYQpc&callback=initMap"></script>
   </body>
 </html>

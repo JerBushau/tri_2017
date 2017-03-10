@@ -1,28 +1,31 @@
 'use strict'
 
-// Sticky nav
-$('.main-nav').sticky({topSpacing: 0});
-
-// Smooth scroll to anchors
-$('.scroll').on('click', function(e) {     
-  e.preventDefault();
-  $('html,body').animate({scrollTop:$(this.hash).offset().top - 34}, 400);
-
-  $(e.target).blur()
+$(window).scroll(function() {
+  if ($(this).scrollTop() < 225) {
+    $('.b2t').css('display', 'none');
+  } else {
+    $('.b2t').css('display', 'flex');
+  }
 });
 
-// Show/hide back to top button
-$('.main-nav').on('sticky-start', function() {
-  $('.b2t').css('display', 'inline-block');
-});
+// Google maps api stuff 
+function initMap() {
+  var uluru = {lat: 38.2847077, lng: -85.7217259};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    scrollwheel: false,
+    disableDefaultUI: true,
+    center: uluru
+  });
+  var marker = new google.maps.Circle({
+    center: uluru,
+    radius: 800 * 125,
+    strokeColor: '#1521c5',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.159,
+    map: map
+  });
+}
 
-$('.main-nav').on('sticky-end', function() {
-  $('.b2t').css('display', 'none');
-});
-
-// Smooth scroll back to top 
-$('.b2t').on('click', function(e) {
-  $("html, body").animate({scrollTop: 0}, 500);
-
-  $(e.target).blur()
-});

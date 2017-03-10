@@ -13,7 +13,7 @@ $bg-sections: radial-gradient(circle, rgba(192, 192, 192, 0.822),
 $bg-gradient-white: darken(rgba(255, 255, 255, 0.9), 3%);
 $bg-image: radial-gradient(circle, transparent, $bg-gradient-white 98%),
            url(../../images/water_ice_bg_cpsd.jpg);
-$bg-b2t: rgba(245, 245, 245, 0.722);
+$bg-b2t: rgba(245, 245, 245, 0.822);
 
 //fonts 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
@@ -73,6 +73,7 @@ img {
   background-image: $bg-image;
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -91,7 +92,7 @@ header {
   .logo {
     width: 95%;
     margin: auto;
-    margin-top: 1.5em;
+    margin-top: 4em;
   }
 
   .number {
@@ -102,15 +103,15 @@ header {
 
 .main-nav {
   display: flex;
-  margin: 1em auto;
-  transition: background .5s ease, box-shadow .5s ease;
-
-  .is-sticky & {
-    background: $white;
-    box-shadow: 0 0 10px $shadow-color;
-    border-radius: 0 0 5px 5px;
-    margin-top: 0;
-  }
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  // transition: background .5s ease, box-shadow .5s ease;
+  background: $bg-b2t;
+  box-shadow: 0 0 10px $shadow-color;
+  border-radius: 0;
 
   a {
     color: $tri-blue;
@@ -118,6 +119,7 @@ header {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
+    margin: 0;
 
     // &:hover,
     &:active {
@@ -129,7 +131,7 @@ header {
     }
   }
   @media (min-width: 500px) {
-    width: 70%;
+    width: 100%;
   }
 }
 
@@ -140,7 +142,7 @@ footer {
   display: flex;
   align-self: center;
   font-family: 'Open Sans', sans-serif;
-  height: 150px;
+  height: 55px;
   color: $black;
   color: $footer-font;
 
@@ -154,12 +156,13 @@ section.service,
 section.installation,
 section.contact {
   display: flex;
+  box-shadow: 0 0 4px $shadow-color;
   color: $black;
   text-align: center;
   background: $bg-fallback-color;
   background: $bg-sections;
   border: 2px solid $white;
-  border-radius: .8em;
+  border-radius: 5px;
   padding: 2em 0.7em 1.7em;
   height: auto;
   max-width: 850px;
@@ -185,17 +188,50 @@ section.contact {
   }
 }
 
+.contact {
+
+  #map {
+    border: 2px solid $white;
+    border-radius: 5px;
+    height: 250px;
+    width: 100%;
+    margin: auto;
+
+    @media (min-width: 500px) {
+      width: 75%;
+    }
+  }
+}
+
+// section anchors
+#service {
+  margin-top: 40px;
+}
+
+.offset:before { 
+  display: block; 
+  content: " "; 
+  height: 15px;      /* Give height of your fixed element */
+  margin-top: -15px; /* Give negative margin of your fixed element */    
+  visibility: hidden; 
+}
+
+// buttons
 .b2t:focus,
 .b2t {
   outline: $white;
   background: $bg-b2t;
   box-shadow: 0 0 10px $shadow-color;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0 ;
   color: $tri-blue;
+  text-align: center;
   border: none;
+  text-decoration: none;
   display: none;
+  flex-direction: column;
+  padding: 5px;
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   right: 10px;
 }
 
@@ -265,32 +301,32 @@ section.contact {
 }
 
 // css animations
-@keyframes hvr-wobble {
-  33.3% {
-    transform: translateY(3px);
-  }
-  49.95% {
-    transform: translateY(-3px);
-  }
-  83.25% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+// @keyframes hvr-wobble {
+//   33.3% {
+//     transform: translateY(3px);
+//   }
+//   49.95% {
+//     transform: translateY(-3px);
+//   }
+//   83.25% {
+//     transform: translateY(2px);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
 
-.hvr-wobble {
-  display: inline-block;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-}
-.hvr-wobble:hover, 
-.hvr-wobble:focus, 
-.hvr-wobble:active {
-  animation-name: hvr-wobble;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-}
+// .hvr-wobble {
+//   display: inline-block;
+//   vertical-align: middle;
+//   transform: perspective(1px) translateZ(0);
+//   box-shadow: 0 0 1px transparent;
+// }
+// .hvr-wobble:hover, 
+// .hvr-wobble:focus, 
+// .hvr-wobble:active {
+//   animation-name: hvr-wobble;
+//   animation-duration: 0.6s;
+//   animation-timing-function: ease-in-out;
+//   animation-iteration-count: 1;
+// }

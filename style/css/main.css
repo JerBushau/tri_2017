@@ -42,6 +42,7 @@ img {
   background-image: radial-gradient(circle, transparent, rgba(247, 247, 247, 0.9) 98%), url(../../images/water_ice_bg_cpsd.jpg);
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -56,26 +57,28 @@ header {
   header .logo {
     width: 95%;
     margin: auto;
-    margin-top: 1.5em; }
+    margin-top: 4em; }
   header .number {
     width: 60%;
     margin: auto; }
 
 .main-nav {
   display: flex;
-  margin: 1em auto;
-  transition: background .5s ease, box-shadow .5s ease; }
-  .is-sticky .main-nav {
-    background: #F7F7F7;
-    box-shadow: 0 0 10px rgba(25, 25, 25, 0.6);
-    border-radius: 0 0 5px 5px;
-    margin-top: 0; }
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(245, 245, 245, 0.822);
+  box-shadow: 0 0 10px rgba(25, 25, 25, 0.6);
+  border-radius: 0; }
   .main-nav a {
     color: #1521c5;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    margin: 0; }
     .main-nav a:active {
       color: #E00909; }
     @media (min-width: 361px) {
@@ -83,14 +86,14 @@ header {
         font-size: 1.6em; } }
   @media (min-width: 500px) {
     .main-nav {
-      width: 70%; } }
+      width: 100%; } }
 
 footer {
   z-index: 0;
   display: flex;
   align-self: center;
   font-family: 'Open Sans', sans-serif;
-  height: 150px;
+  height: 55px;
   color: #191919;
   color: rgba(25, 25, 25, 0.6); }
   footer small {
@@ -100,12 +103,13 @@ section.service,
 section.installation,
 section.contact {
   display: flex;
+  box-shadow: 0 0 4px rgba(25, 25, 25, 0.6);
   color: #191919;
   text-align: center;
   background: #F7F7F7;
   background: radial-gradient(circle, rgba(192, 192, 192, 0.822), rgba(245, 245, 245, 0.922));
   border: 2px solid #F7F7F7;
-  border-radius: .8em;
+  border-radius: 5px;
   padding: 2em 0.7em 1.7em;
   height: auto;
   max-width: 850px;
@@ -125,17 +129,43 @@ section.contact {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal; }
 
+.contact #map {
+  border: 2px solid #F7F7F7;
+  border-radius: 5px;
+  height: 250px;
+  width: 100%;
+  margin: auto; }
+  @media (min-width: 500px) {
+    .contact #map {
+      width: 75%; } }
+
+#service {
+  margin-top: 40px; }
+
+.offset:before {
+  display: block;
+  content: " ";
+  height: 15px;
+  /* Give height of your fixed element */
+  margin-top: -15px;
+  /* Give negative margin of your fixed element */
+  visibility: hidden; }
+
 .b2t:focus,
 .b2t {
   outline: #F7F7F7;
-  background: rgba(245, 245, 245, 0.722);
+  background: rgba(245, 245, 245, 0.822);
   box-shadow: 0 0 10px rgba(25, 25, 25, 0.6);
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   color: #1521c5;
+  text-align: center;
   border: none;
+  text-decoration: none;
   display: none;
+  flex-direction: column;
+  padding: 5px;
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   right: 10px; }
 
 .b2t:active {
@@ -184,28 +214,5 @@ section.contact {
 @media (max-width: 400px) {
   .hidden-xs {
     display: none; } }
-
-@keyframes hvr-wobble {
-  33.3% {
-    transform: translateY(3px); }
-  49.95% {
-    transform: translateY(-3px); }
-  83.25% {
-    transform: translateY(2px); }
-  100% {
-    transform: translateY(0); } }
-.hvr-wobble {
-  display: inline-block;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent; }
-
-.hvr-wobble:hover,
-.hvr-wobble:focus,
-.hvr-wobble:active {
-  animation-name: hvr-wobble;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1; }
 
 /*# sourceMappingURL=main.css.map */
