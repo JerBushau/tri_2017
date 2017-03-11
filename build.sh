@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 build() {
-  mkdir build/
-  mkdir build/style
-  mkdir build/style/css
+  mkdir -v build/
+  mkdir -v build/style
+  mkdir -v build/style/css
 
   cp -avr images/ build/images/ 
   cp -avr scripts/ build/scripts/ 
