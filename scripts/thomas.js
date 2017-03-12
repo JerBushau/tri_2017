@@ -28,7 +28,7 @@ function linkHandler(e) {
 }
 
 function exitHandler(e) {
-  var parent = $(e.target.parentElement);
+  var $parent = $(e.target.parentElement);
   
-  parent.fadeOut();
+  $parent.fadeOut();
 }
