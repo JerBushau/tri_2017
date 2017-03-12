@@ -2,7 +2,6 @@
 
 $(window).scroll(function() {
 
-  // change this to a class using $.addClass() and $.removeClass()
   if ($(this).scrollTop() < 100) {
     $('.b2t').addClass('invisible');
 
