@@ -1,11 +1,21 @@
 'use strict'
 
 $(window).scroll(function() {
-  if ($(this).scrollTop() < 225) {
-    $('.b2t').css('display', 'none');
-  } else {
-    $('.b2t').css('display', 'flex');
+
+  // change this to a class using $.addClass() and $.removeClass()
+  if ($(this).scrollTop() < 100) {
+    $('.b2t').addClass('invisible');
+
+  } else if ($(this).scrollTop() > 100) {
+    $('.b2t').removeClass('invisible');
   }
+
+  if ($(this).scrollTop()) {
+    $('.main-nav').removeClass('invisible'); 
+  } else {
+    $('.main-nav').addClass('invisible');
+  }
+
 });
 
 // Google maps api stuff 
