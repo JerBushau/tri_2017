@@ -58,7 +58,9 @@ h3 {
 }
 
 h4 {
-  margin: 0.6em auto;
+  margin: 0;
+  padding: 0.4em;
+  font-weight: normal;
 }
 
 
@@ -150,7 +152,38 @@ header {
   }
 }
 
+// buttons
+.b2t {
+  outline: $white;
+  background: $bg-b2t;
+  box-shadow: 0 0 10px $shadow-color;
+  border-radius: 5px 5px 0 0 ;
+  color: $tri-blue;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  transition: background 0.5s ease, color 0s ease;
 
+  &:active {
+    color: $tri-red;
+    box-shadow: 0 0 6px $shadow-color;
+  }
+
+  @media (min-width: 850px) {
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $tri-red;      
+    }
+  }
+}
 
 footer {  
   z-index: 0;
@@ -243,40 +276,6 @@ section.contact {
   height: 15px; 
   margin-top: -15px;   
   visibility: hidden; 
-}
-
-// buttons
-.b2t {
-  outline: $white;
-  background: $bg-b2t;
-  box-shadow: 0 0 10px $shadow-color;
-  border-radius: 5px 5px 0 0 ;
-  color: $tri-blue;
-  text-align: center;
-  border: none;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  font-family: 'Open Sans', sans-serif;
-  position: fixed;
-  bottom: 0;
-  right: 10px;
-  transition: background 0.5s ease, color 0s ease;
-
-  @media (min-width: 850px) {
-    transition: color 0.5s ease;
-
-    &:hover {
-      color: $tri-red;      
-    }
-  }
-}
-
-
-.b2t:active {
-  color: $tri-red;
-  box-shadow: 0 0 6px $shadow-color;
 }
 
 //typo and stuff

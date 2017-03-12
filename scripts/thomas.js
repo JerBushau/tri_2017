@@ -1,16 +1,20 @@
 'use strict'
 
+// watch for scroll
 $(window).scroll(function() {
 
+  // if user is near top of page no back to top btn 
   if ($(this).scrollTop() < 100) {
     $('.b2t').addClass('invisible');
-
+  // else yes back to top btn
   } else if ($(this).scrollTop() > 100) {
     $('.b2t').removeClass('invisible');
   }
 
+  // if user is not at top of page nav has bg
   if ($(this).scrollTop()) {
     $('.main-nav').removeClass('invisible'); 
+  // else user is at top nav does not have bg
   } else {
     $('.main-nav').addClass('invisible');
   }
@@ -37,4 +41,3 @@ function initMap() {
     map: map
   });
 }
-
