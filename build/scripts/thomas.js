@@ -1,34 +1,47 @@
 'use strict'
 
-$('nav').on('click', linkHandler);
+// watch for scroll
+$(window).scroll(function() {
 
-$('.exit').on('click', exitHandler);
-
-function linkHandler(e) {
-  var linkText = e.target.textContent;
-  var $serviceOverlay = $('section.service');
-  var $installOverlay = $('section.install');
-  var $contactOverlay = $('section.contact');
-
-  e.preventDefault();
-  
-  if (linkText === 'Service') {
-    
-    // css & hide used to fadeIn flex instead of block
-    $serviceOverlay.css("display", "flex").hide().fadeIn();
-
-  } else if (linkText === 'Installation') {
-
-    $installOverlay.css("display", "flex").hide().fadeIn();
-
-  } else if (linkText === 'Contact') {
-
-    $contactOverlay.css("display", "flex").hide().fadeIn();
+  // if user is near top of page no back to top btn 
+  if ($(this).scrollTop() < 100) {
+    $('.b2t').addClass('invisible');
+    $('.logo').removeClass('logo-fixed');
+    $('.logo-spacer').css('display', 'none')
+  // else yes back to top btn
+  } else if ($(this).scrollTop() > 100) {
+    $('.b2t').removeClass('invisible');
+    $('.logo').addClass('logo-fixed');
+    $('.logo-spacer').css('display', 'block')
   }
-}
 
-function exitHandler(e) {
-  var parent = $(e.target.parentElement);
-  
-  parent.fadeOut();
+  // if user is not at top of page nav has bg
+  if ($(this).scrollTop()) {
+    $('.main-nav').removeClass('invisible'); 
+  // else user is at top nav does not have bg
+  } else {
+    $('.main-nav').addClass('invisible');
+  }
+
+});
+
+// Google maps api stuff 
+function initMap() {
+  var uluru = {lat: 38.2847077, lng: -85.7217259};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    scrollwheel: false,
+    disableDefaultUI: true,
+    center: uluru
+  });
+  var marker = new google.maps.Circle({
+    center: uluru,
+    radius: 800 * 125,
+    strokeColor: '#1521c5',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.159,
+    map: map
+  });
 }
