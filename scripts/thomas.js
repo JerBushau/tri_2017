@@ -22,7 +22,7 @@ $(window).scroll(function() {
   } else {
     $('.main-nav').addClass('invisible');
   }
-
+  
 });
 
 // Google maps api stuff 
