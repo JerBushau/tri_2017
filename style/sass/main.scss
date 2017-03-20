@@ -1,3 +1,6 @@
+@import '../vendor/flexboxgrid.min';
+@import '../vendor/font-awesome.min';
+
 //variables
 $black: #191919;
 $shadow-color: rgba(25, 25, 25, 0.6);
@@ -86,6 +89,7 @@ img {
   align-content: center;
   margin: auto;
   padding: 0;
+  z-index: -2;
 }
 
 
@@ -93,17 +97,36 @@ img {
 header {
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin: auto;
   max-width: 100%;
 
   .logo {
     width: 95%;
+    max-width: 665px;
     margin: auto;
     margin-top: 4em;
+    z-index: -1;
+    transition: margin 0.5s ease;
+  }
+
+  .logo-fixed {
+    margin-top: 15em;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .logo-spacer {
+    display: none;
+    height: 209.297px;
   }
 
   .number {
     width: 60%;
+    max-width: 420px;
     margin: auto;
   }
 }
@@ -120,6 +143,7 @@ header {
   right: 0;
   border-radius: 0;
   transition: all 0.5s ease;
+  z-index: 5;
 
   a {
     color: $tri-blue;
@@ -216,6 +240,7 @@ section.contact {
   max-width: 850px;
   margin: 2em auto;
   align-items: center;
+  flex-direction: column;
   font-size: .89em;
   font-family: 'Open Sans', sans-serif;
   z-index: 1;

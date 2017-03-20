@@ -6,9 +6,13 @@ $(window).scroll(function() {
   // if user is near top of page no back to top btn 
   if ($(this).scrollTop() < 100) {
     $('.b2t').addClass('invisible');
+    $('.logo').removeClass('logo-fixed');
+    $('.logo-spacer').css('display', 'none')
   // else yes back to top btn
   } else if ($(this).scrollTop() > 100) {
     $('.b2t').removeClass('invisible');
+    $('.logo').addClass('logo-fixed');
+    $('.logo-spacer').css('display', 'block')
   }
 
   // if user is not at top of page nav has bg
